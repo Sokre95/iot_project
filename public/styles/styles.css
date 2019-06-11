@@ -55,20 +55,24 @@ img {
 .sensors-container {
     display: flex;
     flex-wrap: wrap;
-    border: #43799c;
-    border-block-start: #43799c
 }
 
 .sensors-container > div[class*='col-'] {
+  padding-top: 50px;
   display: flex;
 }
 
-.sensor-container {
-    margin: 2;
-    padding: 4;
+.card-deck .card{
+  padding-bottom:50px;
 }
 
 .card-img-top {
   margin: auto; 
   padding: 10px;
+}
+
+.card-footer {
+  /* position: absolute; */
+  bottom:0;
+  width:100%;
 }
