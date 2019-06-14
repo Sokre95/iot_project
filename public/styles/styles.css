@@ -63,6 +63,7 @@ img {
 }
 
 .card-deck .card{
+  width: 18rem;
   padding-bottom:50px;
 }
 

@@ -1,22 +1,30 @@
 import { generateSensorDOM } from './views'
-import { getSensors } from './requests'
+import { getSensors, getMoistureLastDay } from './requests'
 
 const virtualSensors = [{
-  name: 'Virtual sensor #1',
-  state: 1001
+  name: 'Fikus (virtualno)',
+  state: 380
 }, {
-  name: 'Virtual sensor #2',
-  state: 1337
+  name: 'Orhideje (virtualno)',
+  state: 1362
 }]
 
 getSensors()
   .then(sensors => {
-    sensors.forEach(sensor => {
-      document.querySelector('#sensors').appendChild(generateSensorDOM(sensor))
+    // sensors.forEach(sensor => {
+    //   document.querySelector('#sensors').appendChild(generateSensorDOM(sensor))
+    document.querySelector('#sensors').appendChild(generateSensorDOM(sensors[0]))
     });
-  })
+  
 
 virtualSensors.forEach(sensor => document
   .querySelector('#sensors')
   .appendChild(generateSensorDOM(sensor)))
+
+// getMoistureLastDay()
+//   .then(values => {
+//     console.log(values.data.map((data) => {
+//       return {label: data.time, y: data.state}
+//     }))
+//   })
 
